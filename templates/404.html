@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}404 Not Found{% endblock %}
+
+{% block content %}
+    <div class="error">
+        <img src="{{ url_for("static", filename="img/monke.png") }}" alt="monke :p">
+        <br>
+        <br>
+        <p>This page isn't available. Sorry about that.<br>Try searching for something else.</p>
+        <br>
+        <div class="error-bottom">
+            <img src="{{ url_for("static", filename="img/logo.png") }}">
+            <input type="text" placeholder="Search">
+            <button><span class="material-icons">search</span></button>
+        </div>
+    </div>
+{% endblock %}
