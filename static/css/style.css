@@ -27,6 +27,10 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
+html,body{
+    overflow-x: hidden;
+}
+
 body {
 	line-height: 1;
     background-color: var(--bg-darker);
@@ -59,6 +63,7 @@ table {
 /*#region Navbar*/
 .nav-bar{
     position: fixed;
+    z-index: 1;
     top: 0;
     right: 0;
     height: 90px;
@@ -239,23 +244,132 @@ table {
 }
 
 .left-bar ul label{
-    color: white;
+    color: #909090;
     position: relative;
     top: 20px;
     text-align: center;
 }
+
+.left-bar ul li:first-child > label{color: white;}
 
 .left-bar ul li span{
     font-size: 36px;
     position: relative;
     top: 9px;
     left: 9px;
+    color: #909090;
+}
+
+.left-bar ul li:first-child > span{color: white;}
+/*#endregion*/
+
+
+/*#region Videos*/
+.main .videos{
+    font-family: "Roboto",sans-serif;
+    z-index: 0;
+    color: white;
+    width: 96.5%;
+    height: 94.5%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.videos .video{
+    float:left;
+    margin: 40px 0px 40px 40px;
+    width: 560px;
+    height: 441px;
+}
+
+.videos .video .thumbnail{
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 315px;
+}
+
+.videos .video .bottom{
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    height: 126px;
+}
+
+.videos .video .bottom .channel-img{
+    width: 48px;
+    height: 126px;
+    padding: 15px 15px 15px 0px;
+    float: left;
+}
+
+.videos .video .bottom .channel-img img{
+    border-radius: 50%;
+    width: 48px;
+}
+
+.videos .video .bottom .info{
+    padding: 15px;
+    text-align: left;
+}
+
+.videos .video .bottom .info .title{
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.videos .video .bottom .info .channel-detail{
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: 500;
+    color: #aaaaa5;
+}
+/*#endregion*/
+
+/*#region Responsive*/
+@media only screen and (max-width: 600px){
+    .videos .video{
+        float:left;
+        margin: 40px 0px 40px 120px;
+        width: 420px;
+        height: 330px;
+    }
+    
+    .videos .video .thumbnail{
+        height: 230px;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    .videos .video{
+        float:left;
+        margin: 40px 0px 40px 120px;
+        width: 504px;
+        height: 396px;
+    }
+    
+    .videos .video .thumbnail{
+        height: 276px;
+    }
 }
 /*#endregion*/
 
 
 
+/*#region Scrollbar*/
+::-webkit-scrollbar
+{
+    width: 14px; 
+	background: transparent;
+}
 
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	background-color: #909090;
+}
+/*#endregion*/
 
 /*#region Error Page*/
 .error{

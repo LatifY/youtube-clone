@@ -16,7 +16,7 @@
                     <li><span class="material-icons">video_call</span></li>
                     <li><span class="material-icons">apps</span></li>
                     <li><span class="material-icons">notifications</span></li>
-                    <li><img src="{{ url_for("static",filename="img/user.png") }}" class="profile"></img></li>
+                    <li><img src="{{ url_for("static",filename="img/user.jpg") }}" class="profile"></img></li>
                 </ul>
             </div>
         </div>
@@ -34,7 +34,7 @@
 
                 <li>
                     <span id="subscriptions" class="material-icons">subscriptions</span>
-                    <label for="subscriptions">Subs</label>
+                    <label for="subscriptions">Playlist</label>
                 </li>
 
                 <li>
@@ -42,6 +42,24 @@
                     <label for="video">Library</label>
                 </li>
             </ul>
+        </div>
+
+        <div class="videos">
+            {% for i in range(1,50) %}
+                <div class="video">
+                    <img class="thumbnail" src="{{ url_for("static",filename="img/thumbnail.png") }}">
+                    <div class="bottom">
+                        <div class="channel-img"><img src="{{ url_for("static", filename="img/user.jpg") }}"></div>
+                        <div class="info">
+                            <span class="title">Me at the zoo {{ i }}</span>
+                            <p class="channel-detail">jawed</p>
+                            <p class="channel-detail">160M views • 15 years ago</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+
         </div>
     </div>
 
